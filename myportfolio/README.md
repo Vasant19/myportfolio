@@ -1,5 +1,6 @@
 # PROJECT STRUCTURE
 
+<!-- START STRUCTURE -->
 ```
 .
 |-- README.md
@@ -13,10 +14,16 @@
 |   |-- lib
 |   |   `-- index.ts
 |   `-- routes
-|       `-- +layout.svelte
-|-- static
-|   `-- favicon.png
+|       |-- +layout.svelte
+|       |-- +layout.ts
+|       |-- +page.svelte
+|       |-- about
+|       `-- projects
 |-- svelte.config.js
 |-- tsconfig.json
+|-- update-readme-structure.sh
 `-- vite.config.ts
+
+5 directories, 15 files
 ```
+<!-- END STRUCTURE -->
