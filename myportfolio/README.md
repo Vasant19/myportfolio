@@ -1,4 +1,6 @@
-# PROJECT STRUCTURE 
+# PROJECT STRUCTURE
+
+```
 .
 |-- README.md
 |-- eslint.config.js
@@ -17,3 +19,4 @@
 |-- svelte.config.js
 |-- tsconfig.json
 `-- vite.config.ts
+```
