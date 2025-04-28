@@ -13,7 +13,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: dev ? '' : '/Vasant19.github.io'
+			base: dev ? '' : '/myportfolio'
 		}
 	}
 };
