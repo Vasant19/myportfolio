@@ -16,7 +16,6 @@ const config = {
 		paths: {
 			base: dev ? '' : '/myportfolio'
 		},
-		trailingSlash: 'always',
 	}
 };
 
