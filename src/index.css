@@ -1,1 +1,27 @@
-@import "tailwindcss";     /* Tailwind base, components, utilities */
+@import "tailwindcss"
+/* Tailwind base, components, utilities */
+;
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Define theme variables */
+:root {
+    /* Default (light) theme variables */
+    --text-primary: #FF6F61; 
+    --bg-primary: #ffffff;  /* Changed from #5d5757 to white or your preferred color */
+  }
+
+  [data-theme='dark'] {
+    --text-primary: #3F51B5;
+    --bg-primary: #121212;
+  }
+  
+  /* Apply variables to body */
+  body {
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
