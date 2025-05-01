@@ -29,7 +29,6 @@ export default function App() {
   };
 
   return (
-    // Remove the bg-gray-100 dark:bg-gray-800 classes as they might override your CSS variables
     <div className="min-h-screen flex justify-center items-center relative">
       {/* Dark mode toggle button at the top-left */}
       <DarkThemeToggle
@@ -43,15 +42,26 @@ export default function App() {
       />
 
       {/* Heading at the top-left, aligned with the button */}
-      <h1 className="absolute top-4  text-4xl font-bold">
+      <h1 className="absolute top-4 text-4xl font-bold">
         Welcome to My Portfolio
       </h1>
-      
-      <div>
-        <h2 className="text-2xl font-semibold mb-4">Hello, I'm [Your Name]</h2>
+
+      {/* Connect me icons at the top-right */}
+      <div className="absolute top-4 right-4 flex space-x-4">
+        <a href="https://github.com/vasant19" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" className="w-8 h-8" />
+        </a>
+        <a href="https://ca.linkedin.com/in/vasant-dave" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" className="w-8 h-8" />
+        </a>
+      </div>
+
+      {/* Content placed below the heading */}
+      <div className="mt-24 text-left">
+        <h2 className="text-2xl font-semibold mb-4">Hi, I'm Vasant</h2>
         <p className="text-lg">
-          I am a [Your Profession] with a passion for [Your Interests]. 
-          This is my portfolio where you can find my projects and skills.
+          I am a Software Engineer. 
+          This portfolio is dedicated to showcasing the projects I work on. I will try to keep this most up to date.
         </p>
         <p className="text-lg mt-4">
           Feel free to explore and connect with me!
