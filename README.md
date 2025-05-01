@@ -4,26 +4,20 @@
 ```
 .
 ├── eslint.config.js
+├── index.html
 ├── package.json
 ├── package-lock.json
+├── public
+│   └── assets
+│       └── favicon.png
 ├── README.md
 ├── src
-│   ├── app.css
-│   ├── app.d.ts
-│   ├── app.html
-│   ├── lib
-│   │   └── index.ts
-│   └── routes
-│       ├── +layout.svelte
-│       ├── +layout.ts
-│       └── +page.svelte
-├── static
-│   └── favicon.png
-├── svelte.config.js
-├── tsconfig.json
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
 ├── update-readme-structure.sh
-└── vite.config.ts
+└── vite.config.js
 
-5 directories, 16 files
+4 directories, 11 files
 ```
 <!-- END STRUCTURE -->
