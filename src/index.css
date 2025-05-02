@@ -1,0 +1,48 @@
+@import "tailwindcss";
+/* Tailwind base, components, utilities */
+
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+@source "../node_modules/flowbite";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Define theme variables on :root for default (light) theme */
+:root {
+  --text-primary: #333333; 
+  --bg-primary: #dbd5d5;  /* Light mode background */
+}
+
+/* Dark theme variables */
+[data-theme='dark'] {
+  --text-primary: #f1e6d7 ;
+  --bg-primary: #1e1d1d;
+}
+
+/* Apply variables to html and body elements */
+html {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.6s ease, color 0.8s ease;  /* Longer transition for color */
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh; /* Ensure full height coverage */
+  margin: 0;
+  transition: background-color 0.6s ease, color 0.8s ease;  /* Longer transition for text color */
+}
+
+/* Ensure the app container also uses the theme variables */
+#root {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background-color 0.6s ease, color 0.8s ease;  /* Longer transition for color */
+}
+
+/* Use this transition on the root container to allow smooth changes */
+#root {
+  transition: background-color 0.6s ease, color 0.8s ease;  /* Ensure transition is applied here too */
+}
