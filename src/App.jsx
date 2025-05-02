@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { DarkThemeToggle } from 'flowbite-react';
-
+import { Typewriter } from 'react-simple-typewriter'
+import { Carousel } from "flowbite-react";
 export default function App() {
   // Sync with the initial theme state from the HTML tag
   const [isDark, setIsDark] = useState(() => {
@@ -29,24 +30,18 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center relative">
-      {/* Dark mode toggle button at the top-left */}
+    <div className="min-h-screen flex flex-col justify-center items-center relative">
+      {/* Dark mode toggle button */}
       <DarkThemeToggle
         onClick={toggleDarkMode}
         className="absolute top-4 left-4 p-2 rounded"
-        // Use inline styles to ensure the button is visible in both themes
         style={{
           backgroundColor: isDark ? '#333' : '#f0f0f0',
           color: isDark ? '#fff' : '#333'
         }}
       />
 
-      {/* Heading at the top-left, aligned with the button */}
-      <h1 className="absolute top-4 text-4xl font-bold">
-        Welcome to My Portfolio
-      </h1>
-
-      {/* Connect me icons at the top-right */}
+      {/* Connect me icons */}
       <div className="absolute top-4 right-4 flex space-x-4">
         <a href="https://github.com/vasant19" target="_blank" rel="noopener noreferrer">
           <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" className="w-8 h-8" />
@@ -56,17 +51,36 @@ export default function App() {
         </a>
       </div>
 
-      {/* Content placed below the heading */}
-      <div className="mt-24 text-left">
-        <h2 className="text-2xl font-semibold mb-4">Hi, I'm Vasant</h2>
-        <p className="text-lg">
-          I am a Software Engineer. 
-          This portfolio is dedicated to showcasing the projects I work on. I will try to keep this most up to date.
-        </p>
-        <p className="text-lg mt-4">
-          Feel free to explore and connect with me!
-        </p>
+      {/* Heading and subheading container */}
+      <div className="absolute top-4 text-center ">
+        <h1 className="text-4xl font-bold mb-4">
+          Welcome to My Portfolio
+        </h1>
+        <h2 className="mt-16 text-left text-2xl leading-none font-semibold whitespace-pre-line w-full">
+          <Typewriter
+            words={[
+              `Hi, I'm Vasant. I am a Software Engineer. This portfolio showcases the projects I work on. I'll try to keep it updated. 
+\nFeel free to explore and connect with me!`
+            ]}
+            loop={1}
+            cursor={true}
+            cursorStyle="|"
+            typeSpeed={40}
+          />
+        </h2>
       </div>
+
+
+      {/* Project carousel */}
+  <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+      <Carousel slideInterval={5000}>
+        <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." />
+        <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
+        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
+        <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
+        <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
+      </Carousel>
+    </div>
     </div>
   );
 }
