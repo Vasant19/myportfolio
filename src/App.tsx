@@ -11,7 +11,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
+import ThreeBackground from '@/components/ui/ThreeBackground.tsx';
 
 const imageUrls = [
   image1,
@@ -21,7 +22,7 @@ const imageUrls = [
 
 const links = [
   'https://tracemind.canadacentral.cloudapp.azure.com/login',
-  'https://infra-price-peek.lovable.app/',
+  'https://infra-price-peek.onrender.com/',
   // 'https://example3.com',
 ];
 
@@ -54,6 +55,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center relative">
+
+      {/* Three.js background */}
+      <ThreeBackground isDarkMode={isDark} />
+
+
       {/* Dark mode toggle button */}
       <DarkThemeToggle
         onClick={toggleDarkMode}
@@ -79,7 +85,7 @@ export default function App() {
         <h1 className="text-4xl font-bold mb-4">
           Welcome to My Portfolio
         </h1>
-        <h2 className="mt-16 text-left text-2xl font-semibold whitespace-pre-line w-full">
+        <h2 className="mt-6 text-left text-2xl font-semibold whitespace-pre-line w-full">
           <Typewriter
             words={[
               `Hi, I'm Vasant, a Software Engineer. This portfolio showcases my current projects, and I'll try to keep it updated. \nFor detailed information on all my projects, please check out my GitHub. \nClick on the project cards below to see live deployed apps, demo videos, and more! Feel free to explore and connect with me!`
@@ -87,12 +93,12 @@ export default function App() {
             loop={1}
             cursor={true}
             cursorStyle="|"
-            typeSpeed={40}
+            typeSpeed={20}
           />
         </h2>
       </div> {/* Heading and subheading container closing tag */}
       {/* Carousel for images */}
-      <div className="mt-45 w-full flex justify-center">
+      <div className="mt-55 w-full flex justify-center">
       <Carousel className="w-full max-w-4xl ">
       <CarouselContent>
         {imageUrls.map((src, index) => (
@@ -122,6 +128,24 @@ export default function App() {
       <CarouselNext />
     </Carousel>
       </div> {/* Carousel for images closing tag */}
+
+
+
+      <div className="mt-8 flex justify-center">
+  <a
+    href={links[0]} // Change to any featured project link
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block"
+  >
+    <div className="rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-4 shadow-xl animate-bounce border border-white/30 transition-transform transform hover:scale-105 hover:shadow-blue-500/50">
+      <p className="text-lg font-semibold text-center animate-pulse">
+        🚀 Featured Project
+      </p>
+    </div>
+  </a>
+</div>
+
     </div>
   );
 }
