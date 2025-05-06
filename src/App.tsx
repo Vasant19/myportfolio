@@ -71,7 +71,7 @@ export default function App() {
       />
 
       {/* Connect me icons */}
-      <div className="absolute top-4 right-4 flex space-x-4">
+      <div className="absolute top-4 right-4 flex space-x-4 z-50">
         <a href="https://github.com/vasant19" target="_blank" rel="noopener noreferrer">
           <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" className="w-8 h-8" />
         </a>
