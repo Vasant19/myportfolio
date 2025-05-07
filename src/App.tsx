@@ -72,11 +72,14 @@ export default function App() {
 
       {/* Connect me icons */}
       <div className="absolute top-4 right-4 flex space-x-4 z-50">
-        <a href="https://github.com/vasant19" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/vasant19" target="_blank" rel="noopener noreferrer" className="transform transition-transform duration-300 hover:scale-110 animate-bounce" style={{ animationDelay: '0.1s' }}>
           <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" className="w-8 h-8" />
         </a>
-        <a href="https://ca.linkedin.com/in/vasant-dave" target="_blank" rel="noopener noreferrer">
+        <a href="https://ca.linkedin.com/in/vasant-dave" target="_blank" rel="noopener noreferrer" className="transform transition-transform duration-300 hover:scale-110 animate-bounce" style={{ animationDelay: '0.2s' }}>
           <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" className="w-8 h-8" />
+        </a>
+        <a href="mailto:vasantdave@outlook.com" target="_blank" rel="noopener noreferrer" className="transform transition-transform duration-300 hover:scale-110 animate-bounce " style={{ animationDelay: '0.3s' }}>
+          <img src="https://img.icons8.com/ios-filled/50/000000/mail.png" alt="Email" className="w-8 h-8" />
         </a>
       </div>
 
