@@ -54,101 +54,131 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center relative">
-
+    <div className="min-h-screen relative overflow-x-hidden">
       {/* Three.js background */}
       <ThreeBackground isDarkMode={isDark} />
 
-
-      {/* Dark mode toggle button */}
-      <DarkThemeToggle
-        onClick={toggleDarkMode}
-        className="absolute top-4 left-4 p-2 rounded"
-        style={{
-          backgroundColor: isDark ? '#333' : '#f0f0f0',
-          color: isDark ? '#fff' : '#333'
-        }}
-      />
-
-      {/* Connect me icons */}
-      <div className="absolute top-4 right-4 flex space-x-4 z-50">
-        <a href="https://github.com/vasant19" target="_blank" rel="noopener noreferrer" className="transform transition-transform duration-300 hover:scale-110 animate-bounce" style={{ animationDelay: '0.1s' }}>
-          <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" className="w-8 h-8" />
-        </a>
-        <a href="https://ca.linkedin.com/in/vasant-dave" target="_blank" rel="noopener noreferrer" className="transform transition-transform duration-300 hover:scale-110 animate-bounce" style={{ animationDelay: '0.2s' }}>
-          <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" className="w-8 h-8" />
-        </a>
-        <a href="mailto:vasantdave@outlook.com" target="_blank" rel="noopener noreferrer" className="transform transition-transform duration-300 hover:scale-110 animate-bounce " style={{ animationDelay: '0.3s' }}>
-          <img src="https://img.icons8.com/ios-filled/50/000000/mail.png" alt="Email" className="w-8 h-8" />
-        </a>
-      </div>
-
-      {/* Heading and subheading container */}
-      <div className="absolute top-4 text-center ">
-        <h1 className="text-4xl font-bold mb-4">
-          Welcome to My Portfolio
-        </h1>
-        <h2 className="mt-6 text-left text-2xl font-semibold whitespace-pre-line w-full">
-          <Typewriter
-            words={[
-              `Hi, I'm Vasant, a Software Engineer. This portfolio showcases my current projects, and I'll try to keep it updated. \nFor detailed information on all my projects, please check out my GitHub. \nClick on the project cards below to see live deployed apps, demo videos, and more! Feel free to explore and connect with me!`
-            ]}
-            loop={1}
-            cursor={true}
-            cursorStyle="|"
-            typeSpeed={20}
-          />
-        </h2>
-      </div> {/* Heading and subheading container closing tag */}
-      {/* Carousel for images */}
-      <div className="mt-55 w-full flex justify-center">
-      <Carousel className="w-full max-w-4xl ">
-      <CarouselContent>
-        {imageUrls.map((src, index) => (
-          <CarouselItem key={index} className="basis-[450px]">
-            <div className="p-1">
-              <Card className="border-2 border-amber-900 dark:border-cyan-950 bg-slate-950 w-full">
-                <CardContent className="flex items-center justify-center p-0">
-                <a 
-            href={links[index]}  // Associate the link to the image based on index
-            target="_blank"
-            rel="noopener noreferrer">
-              <div className="w-full  bg-gray-100">
-                  <img
-                    src={src}
-                    alt={`Image ${index + 1}`}
-                    className="w-full h-full square-xl"
-                  />
-              </div>
-              </a>
-                </CardContent>
-              </Card>
+      {/* Header section with navigation */}
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3 flex justify-between items-center bg-opacity-50 backdrop-blur-sm">
+        <div className="flex items-center space-x-3">
+          <div className="group relative">
+            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
+            <div className="relative">
+              <DarkThemeToggle
+                onClick={toggleDarkMode}
+                className="p-2 rounded transition-colors duration-200 relative z-10 group-hover:scale-110"
+                style={{
+                  backgroundColor: isDark ? '#333' : '#f0f0f0',
+                  color: isDark ? '#fff' : '#333'
+                }}
+              />
             </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
-      </div> {/* Carousel for images closing tag */}
+          </div>
+          <span className={`text-sm font-semibold tracking-wide transition-all duration-200 px-3 py-1.5 rounded-md ${
+            isDark 
+              ? 'bg-gray-800 text-gray-100 shadow-lg shadow-gray-900/50' 
+              : 'bg-gray-100 text-gray-950 shadow-lg shadow-gray-200/50'
+          }`}>
+            {isDark ? 'Dark Mode' : 'Light Mode'}
+          </span>
+        </div>
+        
+        <div className="flex space-x-4">
+          <a href="https://github.com/vasant19" target="_blank" rel="noopener noreferrer" 
+             className="group relative">
+            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
+            <div className="relative flex items-center justify-center w-8 h-8 bg-white dark:bg-gray-800 rounded-lg transition duration-300 group-hover:scale-110">
+              <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" className="w-6 h-6 transition duration-300 group-hover:brightness-110" />
+            </div>
+          </a>
+          <a href="https://ca.linkedin.com/in/vasant-dave" target="_blank" rel="noopener noreferrer" 
+             className="group relative">
+            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
+            <div className="relative flex items-center justify-center w-8 h-8 bg-white dark:bg-gray-800 rounded-lg transition duration-300 group-hover:scale-110">
+              <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" className="w-6 h-6 transition duration-300 group-hover:brightness-110" />
+            </div>
+          </a>
+          <a href="mailto:vasantdave@outlook.com" target="_blank" rel="noopener noreferrer" 
+             className="group relative">
+            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-red-500 to-orange-500 opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
+            <div className="relative flex items-center justify-center w-8 h-8 bg-white dark:bg-gray-800 rounded-lg transition duration-300 group-hover:scale-110">
+              <img src="https://img.icons8.com/ios-filled/50/000000/mail.png" alt="Email" className="w-6 h-6 transition duration-300 group-hover:brightness-110" />
+            </div>
+          </a>
+        </div>
+      </header>
 
+      {/* Main content */}
+      <main className="container mx-auto px-4 pt-24 pb-12">
+        {/* Welcome section */}
+        <section className="text-center mb-12 max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Welcome to My Portfolio
+          </h1>
+          <h2 className="text-left text-xl md:text-xl font-semibold leading-relaxed">
+            <Typewriter
+              words={[
+                `Hi, I'm Vasant, a Software Engineer. This portfolio showcases my current projects, and I'll try to keep it updated. For detailed information on all my projects, please check out my GitHub. Click on the project cards below to see live deployed apps, demo videos, and more! Feel free to explore and connect with me!`
+              ]}
+              loop={1}
+              cursor={true}
+              cursorStyle="|"
+              typeSpeed={20}
+            />
+          </h2>
+        </section>
 
+        {/* Projects carousel section */}
+        <section className="mb-12">
+          <Carousel className="w-full max-w-5xl mx-auto">
+            <CarouselContent>
+              {imageUrls.map((src, index) => (
+                <CarouselItem key={index} className="basis-1/2">
+                  <div className="p-2">
+                    <Card className="border-2 border-amber-900 dark:border-cyan-950 bg-slate-950 hover:shadow-lg transition-shadow duration-300">
+                      <CardContent className="p-0">
+                        <a 
+                          href={links[index]}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block"
+                        >
+                          <div className="aspect-video overflow-hidden">
+                            <img
+                              src={src}
+                              alt={`Project ${index + 1}`}
+                              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                            />
+                          </div>
+                        </a>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
+        </section>
 
-      <div className="mt-8 flex justify-center">
-  <a
-    href={links[0]} // Change to any featured project link
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-block"
-  >
-    <div className="rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-4 shadow-xl animate-bounce border border-white/30 transition-transform transform hover:scale-105 hover:shadow-blue-500/50">
-      <p className="text-lg font-semibold text-center animate-pulse">
-        🚀 Featured Project
-      </p>
-    </div>
-  </a>
-</div>
-
+        {/* Featured project section */}
+        <section className="text-center">
+          <a
+            href={links[0]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block group relative"
+          >
+            <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
+            <div className="relative rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 shadow-xl transition-all duration-300 transform group-hover:scale-105">
+              <p className="text-lg font-semibold">
+                🚀 Featured Project
+              </p>
+            </div>
+          </a>
+        </section>
+      </main>
     </div>
   );
 }
