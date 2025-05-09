@@ -59,10 +59,11 @@ export default function App() {
       <ThreeBackground isDarkMode={isDark} />
 
       {/* Header section with navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3 flex justify-between items-center bg-opacity-50 backdrop-blur-sm">
-        <div className="flex items-center space-x-3">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3 flex justify-between items-center bg-white dark:bg-neutral-900 shadow-md">
+        {/* Left section with theme toggle */}
+        <div className="flex items-center space-x-3 min-w-[120px]">
           <div className="group relative">
-            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
+            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 blur-md transition duration-300"></div>
             <div className="relative">
               <DarkThemeToggle
                 onClick={toggleDarkMode}
@@ -82,25 +83,31 @@ export default function App() {
             {isDark ? 'Dark Mode' : 'Light Mode'}
           </span>
         </div>
+
+        {/* Center title */}
+        <h1 className="text-lg sm:text-xl md:text-4xl font-bold bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+          Welcome to My Portfolio
+        </h1>
         
-        <div className="flex space-x-4">
+        {/* Right section with social icons */}
+        <div className="flex space-x-4 min-w-[120px] justify-end">
           <a href="https://github.com/vasant19" target="_blank" rel="noopener noreferrer" 
              className="group relative">
-            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
+            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 blur-md transition duration-300"></div>
             <div className="relative flex items-center justify-center w-8 h-8 bg-white dark:bg-gray-800 rounded-lg transition duration-300 group-hover:scale-110">
               <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" className="w-6 h-6 transition duration-300 group-hover:brightness-110" />
             </div>
           </a>
           <a href="https://ca.linkedin.com/in/vasant-dave" target="_blank" rel="noopener noreferrer" 
              className="group relative">
-            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
+            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 blur-md transition duration-300"></div>
             <div className="relative flex items-center justify-center w-8 h-8 bg-white dark:bg-gray-800 rounded-lg transition duration-300 group-hover:scale-110">
               <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" className="w-6 h-6 transition duration-300 group-hover:brightness-110" />
             </div>
           </a>
           <a href="mailto:vasantdave@outlook.com" target="_blank" rel="noopener noreferrer" 
              className="group relative">
-            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-red-500 to-orange-500 opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
+            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-red-500 to-orange-500 opacity-0 group-hover:opacity-100 blur-md transition duration-300"></div>
             <div className="relative flex items-center justify-center w-8 h-8 bg-white dark:bg-gray-800 rounded-lg transition duration-300 group-hover:scale-110">
               <img src="https://img.icons8.com/ios-filled/50/000000/mail.png" alt="Email" className="w-6 h-6 transition duration-300 group-hover:brightness-110" />
             </div>
@@ -112,9 +119,6 @@ export default function App() {
       <main className="container mx-auto px-4 pt-24 pb-12">
         {/* Welcome section */}
         <section className="text-center mb-12 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Welcome to My Portfolio
-          </h1>
           <h2 className="text-left text-xl md:text-xl font-semibold leading-relaxed">
             <Typewriter
               words={[
