@@ -127,7 +127,7 @@ export default function App() {
               loop={1}
               cursor={true}
               cursorStyle="|"
-              typeSpeed={20}
+              typeSpeed={10}
             />
           </h2>
         </section>
