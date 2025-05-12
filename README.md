@@ -3,28 +3,39 @@
 <!-- START STRUCTURE -->
 ```
 .
+├── components.json
 ├── eslint.config.js
 ├── index.html
 ├── package.json
 ├── package-lock.json
 ├── public
 │   └── assets
-│       └── favicon.png
 ├── README.md
 ├── src
-│   ├── App.jsx
+│   ├── App.tsx
 │   ├── assets
+│   │   ├── favicon.png
+│   │   └── images
+│   │       ├── image1.png
+│   │       ├── image2.png
+│   │       └── image3.jpg
 │   ├── components
 │   │   └── ui
-│   │       └── carousel.jsx
+│   │       ├── button.tsx
+│   │       ├── card.tsx
+│   │       ├── carousel.tsx
+│   │       └── ThreeBackground.tsx
 │   ├── index.css
 │   ├── lib
-│   │   └── utils.js
-│   └── main.jsx
-├── temp.jsx
+│   │   └── utils.ts
+│   ├── main.tsx
+│   └── vite-env.d.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
 ├── update-readme-structure.sh
-└── vite.config.js
+└── vite.config.ts
 
-8 directories, 14 files
+9 directories, 24 files
 ```
 <!-- END STRUCTURE -->
