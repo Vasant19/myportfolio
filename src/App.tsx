@@ -62,26 +62,28 @@ export default function App() {
       <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3 flex justify-between items-center bg-white dark:bg-neutral-900 shadow-md">
         {/* Left section with theme toggle */}
         <div className="flex items-center space-x-3 min-w-[120px]">
-          <div className="group relative">
+          <div 
+            onClick={toggleDarkMode}
+            className="group relative flex items-center cursor-pointer"
+          >
             <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 blur-md transition duration-300"></div>
-            <div className="relative">
+            <div className="relative flex items-center">
               <DarkThemeToggle
-                onClick={toggleDarkMode}
                 className="p-2 rounded transition-colors duration-200 relative z-10 group-hover:scale-110"
                 style={{
                   backgroundColor: isDark ? '#333' : '#f0f0f0',
                   color: isDark ? '#fff' : '#333'
                 }}
               />
+              <span className={`ml-2 text-sm font-semibold tracking-wide transition-all duration-200 px-3 py-1.5 rounded-md ${
+                isDark 
+                  ? 'bg-gray-800 text-gray-100 shadow-lg shadow-gray-900/50' 
+                  : 'bg-gray-100 text-gray-950 shadow-lg shadow-gray-200/50'
+              }`}>
+                {isDark ? 'Dark Mode' : 'Light Mode'}
+              </span>
             </div>
           </div>
-          <span className={`text-sm font-semibold tracking-wide transition-all duration-200 px-3 py-1.5 rounded-md ${
-            isDark 
-              ? 'bg-gray-800 text-gray-100 shadow-lg shadow-gray-900/50' 
-              : 'bg-gray-100 text-gray-950 shadow-lg shadow-gray-200/50'
-          }`}>
-            {isDark ? 'Dark Mode' : 'Light Mode'}
-          </span>
         </div>
 
         {/* Center title */}
@@ -92,25 +94,46 @@ export default function App() {
         {/* Right section with social icons */}
         <div className="flex space-x-4 min-w-[120px] justify-end">
           <a href="https://github.com/vasant19" target="_blank" rel="noopener noreferrer" 
-             className="group relative">
+             className="group relative flex items-center">
             <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 blur-md transition duration-300"></div>
             <div className="relative flex items-center justify-center w-8 h-8 bg-white dark:bg-gray-800 rounded-lg transition duration-300 group-hover:scale-110">
               <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" className="w-6 h-6 transition duration-300 group-hover:brightness-110" />
             </div>
+            <span className={`ml-2 text-sm font-semibold tracking-wide transition-all duration-200 px-3 py-1.5 rounded-md hidden md:inline-block ${
+              isDark 
+                ? 'bg-gray-800 text-gray-100 shadow-lg shadow-gray-900/50' 
+                : 'bg-gray-100 text-gray-950 shadow-lg shadow-gray-200/50'
+            }`}>
+              GitHub
+            </span>
           </a>
           <a href="https://ca.linkedin.com/in/vasant-dave" target="_blank" rel="noopener noreferrer" 
-             className="group relative">
+             className="group relative flex items-center">
             <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 blur-md transition duration-300"></div>
             <div className="relative flex items-center justify-center w-8 h-8 bg-white dark:bg-gray-800 rounded-lg transition duration-300 group-hover:scale-110">
               <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" className="w-6 h-6 transition duration-300 group-hover:brightness-110" />
             </div>
+            <span className={`ml-2 text-sm font-semibold tracking-wide transition-all duration-200 px-3 py-1.5 rounded-md hidden md:inline-block ${
+              isDark 
+                ? 'bg-gray-800 text-gray-100 shadow-lg shadow-gray-900/50' 
+                : 'bg-gray-100 text-gray-950 shadow-lg shadow-gray-200/50'
+            }`}>
+              LinkedIn
+            </span>
           </a>
           <a href="mailto:vasantdave@outlook.com" target="_blank" rel="noopener noreferrer" 
-             className="group relative">
+             className="group relative flex items-center">
             <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-red-500 to-orange-500 opacity-0 group-hover:opacity-100 blur-md transition duration-300"></div>
             <div className="relative flex items-center justify-center w-8 h-8 bg-white dark:bg-gray-800 rounded-lg transition duration-300 group-hover:scale-110">
               <img src="https://img.icons8.com/ios-filled/50/000000/mail.png" alt="Email" className="w-6 h-6 transition duration-300 group-hover:brightness-110" />
             </div>
+            <span className={`ml-2 text-sm font-semibold tracking-wide transition-all duration-200 px-3 py-1.5 rounded-md hidden md:inline-block ${
+              isDark 
+                ? 'bg-gray-800 text-gray-100 shadow-lg shadow-gray-900/50' 
+                : 'bg-gray-100 text-gray-950 shadow-lg shadow-gray-200/50'
+            }`}>
+              Email
+            </span>
           </a>
         </div>
       </header>
@@ -127,7 +150,7 @@ export default function App() {
               loop={1}
               cursor={true}
               cursorStyle="|"
-              typeSpeed={20}
+              typeSpeed={15}
             />
           </h2>
         </section>
