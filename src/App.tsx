@@ -66,23 +66,26 @@ export default function App() {
             onClick={toggleDarkMode}
             className="group relative flex items-center cursor-pointer"
           >
-            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 blur-md transition duration-300"></div>
-            <div className="relative flex items-center">
+            <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-rose-500 to-pink-600 opacity-0 group-hover:opacity-100 blur-md transition duration-300"></div>
+            <div className="relative flex items-center justify-center w-8 h-8 bg-white dark:bg-gray-800 rounded-lg transition duration-300 group-hover:scale-110">
               <DarkThemeToggle
-                className="p-2 rounded transition-colors duration-200 relative z-10 group-hover:scale-110"
+                className="w-5 h-5 p-0.5 transition duration-300 group-hover:brightness-110"
                 style={{
-                  backgroundColor: isDark ? '#333' : '#f0f0f0',
-                  color: isDark ? '#fff' : '#333'
+                  backgroundColor: 'transparent',
+                  color: isDark ? '#fff' : '#333',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
                 }}
               />
-              <span className={`ml-2 text-sm font-semibold tracking-wide transition-all duration-200 px-3 py-1.5 rounded-md ${
-                isDark 
-                  ? 'bg-gray-800 text-gray-100 shadow-lg shadow-gray-900/50' 
-                  : 'bg-gray-100 text-gray-950 shadow-lg shadow-gray-200/50'
-              }`}>
-                {isDark ? 'Dark Mode' : 'Light Mode'}
-              </span>
             </div>
+            <span className={`ml-2 text-sm font-semibold tracking-wide transition-all duration-200 px-3 py-1.5 rounded-md ${
+              isDark 
+                ? 'bg-gray-800 text-gray-100 shadow-lg shadow-gray-900/50' 
+                : 'bg-gray-100 text-gray-950 shadow-lg shadow-gray-200/50'
+            }`}>
+              {isDark ? 'Dark Mode' : 'Light Mode'}
+            </span>
           </div>
         </div>
 
