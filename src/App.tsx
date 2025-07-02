@@ -21,7 +21,7 @@ const imageUrls = [
 ];
 
 const links = [
-  'https://tracemind.canadacentral.cloudapp.azure.com/login',
+  'https://tracemind.duckdns.org/login',
   'https://infra-price-peek.onrender.com/',
   // 'https://example3.com',
 ];
