@@ -21,9 +21,8 @@ const imageUrls = [
 ];
 
 const links = [
-  'https://tracemind.duckdns.org/login',
   'https://infra-price-peek.onrender.com/',
-  // 'https://example3.com',
+  'https://devpost.com/software/allegedly-community-note-check-see-beyond-the-claim'
 ];
 
 export default function App() {
