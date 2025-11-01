@@ -15,13 +15,13 @@ import {
 import ThreeBackground from '@/components/ui/ThreeBackground.tsx';
 
 const imageUrls = [
-  image1,
+  "https://api.microlink.io/?url=https://cloudcost.ca&screenshot=true&meta=false&embed=screenshot.url",
   image2,
   image3,
 ];
 
 const links = [
-  'https://infra-price-peek.onrender.com/',
+  'https://cloudcost.ca',
   'https://devpost.com/software/allegedly-community-note-check-see-beyond-the-claim'
 ];
 
