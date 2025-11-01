@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { DarkThemeToggle } from 'flowbite-react';
 import { Typewriter } from 'react-simple-typewriter';
 import { Card, CardContent } from "@/components/ui/card"
-import image1 from '@/assets/images/image1.png';
 import image2 from '@/assets/images/image2.png';
 import image3 from '@/assets/images/image3.jpg';
 import {
