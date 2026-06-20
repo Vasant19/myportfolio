@@ -16,14 +16,15 @@ import ThreeBackground from '@/components/ui/ThreeBackground.tsx';
 const imageUrls = [
   "https://api.microlink.io/?url=https://cloudcost.ca&screenshot=true&meta=false&embed=screenshot.url",
   image2,
-  image3,
   "https://api.microlink.io/?url=https://hackathon-woad-phi.vercel.app/&screenshot=true&meta=false&embed=screenshot.url",
+  image3,
 ];
 
 const links = [
   'https://cloudcost.ca',
   'https://devpost.com/software/allegedly-community-note-check-see-beyond-the-claim',
   'https://hackathon-woad-phi.vercel.app/',
+  '',
 ];
 
 export default function App() {
@@ -167,20 +168,30 @@ export default function App() {
                   <div className="p-2">
                     <Card className="border-2 border-amber-900 dark:border-cyan-950 bg-slate-950 hover:shadow-lg transition-shadow duration-300">
                       <CardContent className="p-0">
-                        <a 
-                          href={links[index]}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block"
-                        >
+                        {links[index] ? (
+                          <a
+                            href={links[index]}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block"
+                          >
+                            <div className="aspect-video overflow-hidden">
+                              <img
+                                src={src}
+                                alt={`Project ${index + 1}`}
+                                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                              />
+                            </div>
+                          </a>
+                        ) : (
                           <div className="aspect-video overflow-hidden">
                             <img
                               src={src}
                               alt={`Project ${index + 1}`}
-                              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                              className="w-full h-full object-cover"
                             />
                           </div>
-                        </a>
+                        )}
                       </CardContent>
                     </Card>
                   </div>
