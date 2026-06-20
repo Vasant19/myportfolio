@@ -17,11 +17,13 @@ const imageUrls = [
   "https://api.microlink.io/?url=https://cloudcost.ca&screenshot=true&meta=false&embed=screenshot.url",
   image2,
   image3,
+  "https://api.microlink.io/?url=https://hackathon-woad-phi.vercel.app/&screenshot=true&meta=false&embed=screenshot.url",
 ];
 
 const links = [
   'https://cloudcost.ca',
-  'https://devpost.com/software/allegedly-community-note-check-see-beyond-the-claim'
+  'https://devpost.com/software/allegedly-community-note-check-see-beyond-the-claim',
+  'https://hackathon-woad-phi.vercel.app/',
 ];
 
 export default function App() {
