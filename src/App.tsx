@@ -149,7 +149,7 @@ export default function App() {
           <h2 className="text-left text-xl md:text-xl font-semibold leading-relaxed">
             <Typewriter
               words={[
-                `Welcome! This portfolio highlights my current projects, I'll keep updating as I go. For full details, please visit my GitHub. Click on the project cards below to see live deployed apps, demo videos, and more! Feel free to explore and connect with me!`
+                `Welcome! This portfolio highlights my current projects, I'll keep updating as I go. For additional projects and details, please visit my GitHub. Click on the project cards below to see live deployed apps, demo videos, and more! Feel free to explore and connect with me!`
               ]}
               loop={1}
               cursor={true}
