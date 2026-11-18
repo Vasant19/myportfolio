@@ -23,7 +23,7 @@ const imageUrls = [
 const links = [
   'https://cloudcost.ca',
   'https://devpost.com/software/allegedly-community-note-check-see-beyond-the-claim',
-  'https://hackathon-woad-phi.vercel.app/',
+  'https://previsit-ai-woad-phi.vercel.app/',
   '',
 ];
 
